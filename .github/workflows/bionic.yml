@@ -2,12 +2,11 @@ name: test
 on: [workflow_dispatch, push, pull_request]
 jobs:
   build:
-    runs-on: ${{ matrix.operating-system }}
+    runs-on: ubuntu-18.04
     strategy:
       matrix:
-        operating-system: [ ubuntu-18.04, ubuntu-16.04 ]
         php: [ '5.5', '7.4']
-    name: PHP ${{ matrix.php }} sample
+    name: PHP ${{ matrix.php }}/ 18.04 sample
     steps:
       - uses: actions/checkout@master
       - name: Setup PHP

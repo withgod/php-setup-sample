@@ -1,0 +1,16 @@
+name: test
+on: [workflow_dispatch, push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-16.04
+    strategy:
+      matrix:
+        php: [ '5.5', '7.4']
+    name: PHP ${{ matrix.php }}/16.04} sample
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup PHP
+        uses: nanasess/setup-php@master
+        with:
+          php-version: ${{ matrix.php }}
+      - run: run php
