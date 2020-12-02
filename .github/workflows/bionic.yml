@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        php: [ '5.5', '7.4']
+        php: [ '5.6', '7.4']
     name: PHP ${{ matrix.php }}/ 18.04 sample
     steps:
       - uses: actions/checkout@master
