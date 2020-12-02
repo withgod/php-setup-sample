@@ -13,4 +13,4 @@ jobs:
         uses: nanasess/setup-php@master
         with:
           php-version: ${{ matrix.php }}
-      - run: run php
+      - run: php run.php
